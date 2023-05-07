@@ -1,0 +1,282 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: rgb(8, 99, 235);
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: url(/bob-brewer-2KbxtNEpSWg-unsplash.jpg) no-repeat center;
+  background-size: cover;
+}
+.page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.24);
+  position: relative;
+  padding: 10px;
+}
+header .logo {
+  color: var(--main-color);
+  font-weight: bold;
+  padding: 10px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header ion-icon {
+  /* order: 1; */
+  font-size: 30px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: 0.3s;
+  /* position: absolute; */
+  /* left: 0; */
+}
+header ion-icon:hover {
+  color: white;
+  border: 1px solid white;
+}
+@media(min-width: 768px) {
+  header ion-icon {
+    display: none;
+  }
+}
+@media(max-width: 767px) {
+  header nav ion-icon:hover + ul {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    width: 130px;
+    border-radius: 6px;
+    background-color: rgba(8, 8, 8, 0.767);
+  }
+  header nav ul li {
+    padding: 10px;
+  }
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+@media(max-width: 767px) {
+  header nav ul {
+    display: none;
+  }
+}
+header nav ul li a {
+  padding: 6px;
+  margin-right: 3px;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: transparent;
+  transition: 0.3s;
+  color: white;
+}
+header nav ul li a:hover {
+  background-color: var(--main-color);
+}
+header button {
+  background-color: var(--main-color);
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+}
+@media(max-width: 767px) {
+  header button {
+    display: none;
+  }
+}
+section {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+@media(max-width: 767px) {
+  body {
+    background: url(/hamza-nouasria-OqIlgE_yGTA-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+  section {
+    flex-direction: column;
+    padding: 0 50px 50px;
+  }
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding-top: 100px;
+  max-width: 800px;
+  padding-bottom: 100px;
+  max-height: 600px;
+}
+main h1 {
+  color: white;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+main h1 span {
+  color: var(--main-color);
+}
+main p {
+  font-size: 18px;
+  color: white;
+  line-height: 1.8;
+}
+main p::selection {
+  color: blue;
+  background-color: blueviolet;
+}
+main button {
+  background-color: var(--main-color);
+  margin-top: 20px;
+  border-radius: 6px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form {
+  background-color: rgba(0, 0, 0, 0.63);
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-height: 600px;
+}
+form h2 {
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+form div {
+  margin-top: 15px;
+  display: block;
+  position: relative;
+}
+form div input {
+  width: 100%;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid var(--main-color);
+  border-left: none;
+  background-color: transparent;
+  outline: none;
+  caret-color: var(--main-color);
+  color: white;
+  transition: 0.5s;
+}
+form div ion-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding-right: 15px;
+  transform: translateY(-50%);
+  color: white;
+  cursor: pointer;
+}
+form div label {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding-left: 10px;
+  transition: 0.5s;
+  opacity: 0;
+}
+form div input:focus + label {
+  top: -1px;
+  z-index: 10;
+  font-size: 12px;
+  opacity: 1;
+}
+form div .email:focus {
+  border-bottom-color: rgb(0, 255, 21);
+}
+form div input:focus + .email {
+  color: rgb(0, 255, 21);
+}
+form div .password:focus {
+  border-bottom-color: rgb(255, 0, 21);
+}
+form div input:focus + .pass {
+  color: rgb(255, 0, 21);
+}
+form button {
+  margin-top: 10px;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form span {
+  display: block;
+  margin: 15px auto;
+  color: white;
+}
+form ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+form ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: grey;
+  transition: 0.5s;
+}
+form ul li a:hover {
+  color: white;
+}
+form > a {
+  text-decoration: none;
+  margin: auto;
+  color: white;
+  width: fit-content;
+  transition: 0.3s;
+}
+form > a:hover {
+  color: var(--main-color);
+}
+/* form span {
+
+} */
+form span a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+button:hover {
+  background-color: rgb(7, 81, 190);
+  color: white;
+}
